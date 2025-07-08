@@ -108,6 +108,7 @@ TW_DEFAULT_LANGUAGE := zh_CN
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
+TW_DEVICE_VERSION := $(shell date -u +"%Y%m%d"-"Beta1"-"By-XingKongTanSuo")
 
 # Crypto
 TW_INCLUDE_CRYPTO := true
