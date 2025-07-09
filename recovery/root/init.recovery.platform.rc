@@ -192,7 +192,7 @@ service mobicore /vendor/bin/mcDriverDaemon --P1 /mnt/vendor/persist/mcRegistry 
 on property:ro.crypto.state=encrypted
     start keymaster-5-0
     start gatekeeper-1-0
-
+    start keystore2
 
 on property:ro.crypto.state=unsupported
     stop mobicore
