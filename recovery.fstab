@@ -3,6 +3,7 @@
 /product                  ext4     product                                 flags=display=product;logical
 /oem                      ext4     cust                                    flags=display=oem;logical
 /vendor/vgc               ext4     vgc                                     flags=display=vgc;logical
+/super                    emmc     /dev/block/by-name/super                flags=dispaly=super
 /metadata                 ext4     /dev/block/by-name/metadata             flags=display=metadata
 /data                     f2fs     /dev/block/by-name/userdata             flags=display=data
 /cache                    ext4     /dev/block/by-name/cache                flags=display=cache
