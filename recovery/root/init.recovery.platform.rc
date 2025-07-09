@@ -188,3 +188,32 @@ service mobicore /vendor/bin/mcDriverDaemon --P1 /mnt/vendor/persist/mcRegistry 
 # 0f5eed3c3b5a47afacca69a84bf0efad.drbin : isp
 # 07407000000000000000000000000000.drbin : sensor
 # 06090000000000000000000000000000.drbin : drm keyinstall
+
+on property:ro.crypto.state=encrypted
+    start keymaster-5-0
+    start gatekeeper-1-0
+
+
+on property:ro.crypto.state=unsupported
+    stop mobicore
+    stop servicemanager
+    stop hwservicemanager
+    stop keymaster-5-0
+    stop gatekeeper-1-0
+
+on property:ro.crypto.state=unencrypted
+    stop mobicore
+    stop servicemanager
+    stop hwservicemanager
+    stop keymaster-5-0
+    stop gatekeeper-1-0
+
+on property:twrp.decrypt.done=true
+    stop mobicore
+    stop servicemanager
+    stop hwservicemanager
+    stop keymaster-5-0
+    stop gatekeeper-1-0
+   
+   
+   
