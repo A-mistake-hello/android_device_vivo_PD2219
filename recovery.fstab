@@ -1,4 +1,4 @@
-/system                   ext4     system                                  flags=display=system;logical
+/system_root                   ext4     system                                  flags=display=system;logical
 /vendor                   ext4     vendor                                  flags=display=vendor;logical
 /product                  ext4     product                                 flags=display=product;logical
 /oem                      ext4     cust                                    flags=display=oem;logical
