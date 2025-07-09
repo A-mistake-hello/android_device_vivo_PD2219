@@ -9,7 +9,7 @@
 #
 ```
 
-#TWRP_for_vivo_Y77_Image_[UNOFFICIAL]_By A-mistake-hello(XingKongTanSuo)
+#TWRP_for_vivo_Y77_Image_[UNOFFICIAL]_By A-mistake-hello(XingKongTanSuo)，but it can't be used now because it has some problems
 
 ```
 #Copyright (C) 2025 The Team Win Recovery Rroject
