@@ -5,10 +5,4 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_PD2219.mk
-
-COMMON_LUNCH_CHOICES := \
-    omni_PD2219-user \
-    omni_PD2219-userdebug \
-    omni_PD2219-eng
+LOCAL_PATH := device/vivo/PD2219

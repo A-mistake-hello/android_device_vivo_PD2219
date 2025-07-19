@@ -7,8 +7,7 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
@@ -22,14 +21,9 @@ PRODUCT_BRAND := vivo
 PRODUCT_MODEL := V2219A
 PRODUCT_MANUFACTURER := vivo
 
-# Dynamic
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_GMS_CLIENTID_BASE := android-vivo
 
-# Extra required packages
-PRODUCT_PACKAGES += \
-    libion
-    
-# fastbootd
-PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock \
-    fastbootd
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="vext_k6855v1_64-user 12 SP1A.210812.003 compiler01031104 release-keys"
+
+BUILD_FINGERPRINT := vivo/PD2219/PD2219:12/SP1A.210812.003/compiler01031104:user/release-keys
