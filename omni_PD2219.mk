@@ -23,7 +23,11 @@ PRODUCT_MANUFACTURER := vivo
 
 PRODUCT_GMS_CLIENTID_BASE := android-vivo
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="vext_k6855v1_64-user 12 SP1A.210812.003 compiler01031104 release-keys"
-
-BUILD_FINGERPRINT := vivo/PD2219/PD2219:12/SP1A.210812.003/compiler01031104:user/release-keys
+# Extra required packages
+PRODUCT_PACKAGES += \
+    libion
+    
+# fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
