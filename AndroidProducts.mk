@@ -6,7 +6,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_PD2219.mk
+    $(LOCAL_DIR)/twrp_PD2219.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_PD2219-userdebug \
+    twrp_PD2219-userdebug \
