@@ -70,6 +70,14 @@ service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
     oneshot
     seclabel u:r:recovery:s0
 
+on property:recovery.service=1
+    start gatekeeper-1-0
+    start keystore2
+    start keymaster-5-0
+    #wait_for_prop hwservicemanager.ready true
+    #exec_start wait_for_keymaster
+    start guardianangle
+
 service vendor.boot-hal-1-2 /vendor/bin/hw/android.hardware.boot@1.2-service
     android.hardware.boot@1.0::IBootControl default
     interface android.hardware.boot@1.1::IBootControl default
@@ -180,33 +188,3 @@ service mobicore /vendor/bin/mcDriverDaemon --P1 /mnt/vendor/persist/mcRegistry 
 # 0f5eed3c3b5a47afacca69a84bf0efad.drbin : isp
 # 07407000000000000000000000000000.drbin : sensor
 # 06090000000000000000000000000000.drbin : drm keyinstall
-
-on property:ro.crypto.state=encrypted
-    start keymaster-5-0
-    start gatekeeper-1-0
-    start keystore2
-    start guardianangle
-
-on property:ro.crypto.state=unsupported
-    stop mobicore
-    stop servicemanager
-    stop hwservicemanager
-    stop keymaster-5-0
-    stop gatekeeper-1-0
-
-on property:ro.crypto.state=unencrypted
-    stop mobicore
-    stop servicemanager
-    stop hwservicemanager
-    stop keymaster-5-0
-    stop gatekeeper-1-0
-
-on property:twrp.decrypt.done=true
-    stop mobicore
-    stop servicemanager
-    stop hwservicemanager
-    stop keymaster-5-0
-    stop gatekeeper-1-0
-   
-   
-   
