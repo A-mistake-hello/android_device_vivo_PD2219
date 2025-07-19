@@ -1,4 +1,3 @@
-import /init.recovery.mt6855.rc
 
 on init
     #create mountpoint for /mnt/vendor/persist partition
@@ -185,7 +184,6 @@ on property:ro.crypto.state=encrypted
     start keymaster-5-0
     start gatekeeper-1-0
     start keystore2
-    start guardianangle
 
 on property:ro.crypto.state=unsupported
     stop mobicore
