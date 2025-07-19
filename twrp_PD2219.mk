@@ -13,9 +13,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
-# Inherit from PD2219 device
-$(call inherit-product, device/vivo/PD2219/device.mk)
-
 PRODUCT_DEVICE := PD2219
 PRODUCT_NAME := omni_PD2219
 PRODUCT_BRAND := vivo
